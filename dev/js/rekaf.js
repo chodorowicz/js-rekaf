@@ -236,6 +236,18 @@
 				priv.updateList.apply($this);
 
 			});
+		},
+		close: function(options) {
+			var init = $.extend({}, defaultOpts, options);
+			
+			return this.each(function() {
+				var $this = $(this),
+					objectData = $this.data();
+
+				$this.set = $.extend({}, init, objectData);
+
+				priv.closeList.apply($this);
+			});
 		}
 	};
 
